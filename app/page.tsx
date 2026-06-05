@@ -1,6 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
+  const challenges = [{ name: "Testimonial Card", href: "/testimonial-card" }];
+
   return (
     <div className="flex flex-1 flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex w-full max-w-3xl flex-1 flex-col items-center justify-center gap-8 bg-white dark:bg-black">
@@ -20,6 +23,20 @@ export default function Home() {
             A collection of frontend challenges created by Mark Austria,
             showcasing my skills and creativity in web development.
           </p>
+        </div>
+        <div className="mt-6 flex w-full max-w-3xl justify-center">
+          <div className="flex flex-wrap gap-3">
+            {challenges.map((c) => (
+              <Link
+                key={c.href}
+                href={c.href}
+                className="inline-flex items-center gap-2 rounded-md border border-black bg-white px-4 py-2 text-black transition hover:bg-black hover:text-white dark:border-white dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black"
+                aria-label={`Open ${c.name} challenge`}
+              >
+                {c.name}
+              </Link>
+            ))}
+          </div>
         </div>
       </main>
     </div>
