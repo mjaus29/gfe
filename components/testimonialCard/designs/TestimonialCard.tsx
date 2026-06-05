@@ -14,7 +14,7 @@ const TestimonialCard = ({
 }: TestimonialCardProps) => {
   return (
     <div className="container-layout flex min-h-screen min-w-screen justify-center bg-linear-to-b from-gray-50 to-[#d2d6db]">
-      <div className="mt-50 flex h-full max-w-85 flex-col gap-4 rounded-lg bg-white p-6 shadow-md">
+      <div className="mt-50 flex h-full max-w-85 flex-col gap-4 rounded-lg bg-white p-6 shadow-sm">
         <div className="flex items-center gap-4">
           <Image
             src={image}
