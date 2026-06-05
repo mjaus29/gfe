@@ -24,7 +24,7 @@ const TestimonialCard = ({
             className="object-cover"
           />
 
-          <div>
+          <div className="flex flex-col gap-px">
             <h3 className="text-lg font-semibold text-neutral-900">{name}</h3>
             <span className="text-sm font-normal text-neutral-600">
               {username}
