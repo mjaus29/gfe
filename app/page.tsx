@@ -2,7 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
-  const challenges = [{ name: "Testimonial Card", href: "/testimonial-card" }];
+  const challenges = [
+    { name: "Testimonial Card", href: "/testimonial-card" },
+    { name: "Blog Card", href: "/blog-card" },
+  ];
 
   return (
     <div className="flex flex-1 flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-black">
