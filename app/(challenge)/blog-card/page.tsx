@@ -2,7 +2,7 @@ import BlogCard from "@/components/blogCard/BlogCard";
 
 const BlogCardPage = () => {
   return (
-    <div className="container-layout flex min-h-screen min-w-screen justify-center bg-linear-to-b from-gray-50 to-[#d2d6db] pt-30">
+    <div className="container-layout bg-layout mt-30">
       <BlogCard
         image={"/img/blogcard.jpg"}
         title={"Top 5 Living Room Inspirations"}

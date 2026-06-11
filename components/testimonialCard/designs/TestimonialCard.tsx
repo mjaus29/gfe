@@ -13,7 +13,7 @@ const TestimonialCard = ({
   message,
 }: TestimonialCardProps) => {
   return (
-    <div className="mt-50 flex h-full max-w-85 flex-col gap-4 rounded-lg bg-white p-6 shadow-sm">
+    <div className="flex h-full max-w-85 flex-col gap-4 rounded-lg bg-white p-6 shadow-sm">
       <div className="flex items-center gap-4">
         <Image
           src={image}

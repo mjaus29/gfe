@@ -127,4 +127,8 @@
   .grid-cols-layout {
     @apply grid grid-cols-4 gap-8 md:grid-cols-6 lg:grid-cols-12;
   }
+
+  .bg-layout {
+    @apply flex min-h-screen min-w-screen justify-center bg-linear-to-b from-gray-50 to-[#d2d6db];
+  }
 }

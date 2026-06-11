@@ -2,7 +2,7 @@ import TestimonialCard from "@/components/testimonialCard/designs/TestimonialCar
 
 const TestimonialCardPage = () => {
   return (
-    <div className="container-layout flex min-h-screen min-w-screen justify-center bg-linear-to-b from-gray-50 to-[#d2d6db]">
+    <div className="container-layout bg-layout mt-50">
       <TestimonialCard
         image={"/img/profile-thumbnail.png"}
         name={"Sarah Dole"}
