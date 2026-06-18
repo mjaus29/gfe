@@ -5,6 +5,7 @@ export default function Home() {
   const challenges = [
     { name: "Testimonial Card", href: "/testimonial-card" },
     { name: "Blog Card", href: "/blog-card" },
+    { name: "Profile Card", href: "/profile-card" },
   ];
 
   return (
