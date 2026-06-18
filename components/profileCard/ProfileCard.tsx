@@ -25,6 +25,7 @@ const ProfileCard = ({ image, title, name, bio }: ProfileCardProps) => {
           width={64}
           height={64}
           className="object-cover"
+          priority
         />
 
         <div className="flex flex-col items-center justify-center gap-1">
@@ -44,7 +45,7 @@ const ProfileCard = ({ image, title, name, bio }: ProfileCardProps) => {
       <div className="flex flex-col gap-6">
         <Link
           href="#"
-          className="flex items-center justify-center gap-1.5 rounded bg-indigo-700 px-4 py-2.5"
+          className="flex items-center justify-center gap-1.5 rounded bg-indigo-700 px-4 py-2.5 transition hover:bg-indigo-500 hover:text-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2"
         >
           <span className="flex items-center justify-center px-0.5 text-base font-medium text-white">
             Contact me
@@ -56,7 +57,7 @@ const ProfileCard = ({ image, title, name, bio }: ProfileCardProps) => {
             <Link
               key={social.name}
               href="#"
-              className="flex items-center justify-center gap-2 rounded p-2"
+              className="flex items-center justify-center gap-2 rounded p-2 transition hover:bg-indigo-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2"
               aria-label={`Visit ${name}'s ${social.name} profile`}
             >
               <Image

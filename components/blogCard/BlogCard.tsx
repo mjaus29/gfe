@@ -12,7 +12,7 @@ const BlogCard = ({ image, title, badge, excerpt }: BlogCardProps) => {
   return (
     <article className="h-full w-85 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
       <div className="relative h-72 w-full">
-        <Image src={image} alt={title} fill className="object-cover" />
+        <Image src={image} alt={title} fill className="object-cover" priority />
       </div>
 
       <div className="flex flex-col gap-3 px-4 py-6">
@@ -28,7 +28,7 @@ const BlogCard = ({ image, title, badge, excerpt }: BlogCardProps) => {
 
           <Link
             href="#"
-            className="flex items-center gap-1.5 rounded focus-visible:outline focus-visible:outline-indigo-700"
+            className="flex items-center gap-1.5 self-start rounded transition hover:bg-indigo-100 hover:text-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2"
           >
             <span className="text-base font-medium text-indigo-700">
               Read More

@@ -21,6 +21,7 @@ const TestimonialCard = ({
           width={48}
           height={48}
           className="object-cover"
+          priority
         />
 
         <div className="flex flex-col gap-px">
