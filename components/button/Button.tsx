@@ -65,7 +65,7 @@ const Button = ({
 }: ButtonProps) => {
   const isLinkVariant = variant === "link" || variant === "linkGray";
   const sizeClass = isLinkVariant ? linkSizes[size] : sizes[size];
-  const iconClass = iconSize === "sm" ? "size-5 shrink-0" : "size-6 shrink-0";
+  const iconClass = iconSize === "sm" ? "size-4 shrink-0" : "size-5 shrink-0";
   const classes = `${base} ${sizeClass} ${variants[variant]} ${className}`;
 
   return (
