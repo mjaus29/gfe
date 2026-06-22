@@ -38,7 +38,10 @@ const ButtonPage = () => {
     <div className="container-layout bg-layout">
       <div className="mt-12 flex h-full flex-col gap-8 md:mt-20 md:gap-10 lg:mt-30 lg:gap-12">
         {variants.map((variant) => (
-          <div key={variant} className="flex flex-wrap gap-4 md:gap-5">
+          <div
+            key={variant}
+            className="flex flex-wrap items-center gap-4 md:gap-5"
+          >
             {buttonConfigs.map((config, index) => (
               <Button
                 key={`${variant}-${config.size}-${index}`}
