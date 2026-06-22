@@ -35,8 +35,8 @@ const buttonConfigs = [
 
 const ButtonPage = () => {
   return (
-    <div className="container-layout bg-layout">
-      <div className="mt-12 flex h-full flex-col gap-8 md:mt-20 md:gap-10 lg:mt-30 lg:gap-12">
+    <div className="container-layout bg-layout bg-white">
+      <div className="mt-28 flex h-full flex-col gap-8 md:gap-10 lg:gap-12">
         {variants.map((variant) => (
           <div
             key={variant}
