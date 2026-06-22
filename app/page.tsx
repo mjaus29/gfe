@@ -6,6 +6,8 @@ export default function Home() {
     { name: "Testimonial Card", href: "/testimonial-card" },
     { name: "Blog Card", href: "/blog-card" },
     { name: "Profile Card", href: "/profile-card" },
+    { name: "Button", href: "/button" },
+    { name: "Hero", href: "/hero" },
   ];
 
   return (

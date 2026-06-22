@@ -1,6 +1,6 @@
-import ArrowIcon from "@/components/icons/ArrowIcon";
 import Image from "next/image";
-import Link from "next/link";
+import Button from "../button/Button";
+import { ArrowIcon } from "../icons/Icons";
 type BlogCardProps = {
   image: string;
   title: string;
@@ -26,15 +26,16 @@ const BlogCard = ({ image, title, badge, excerpt }: BlogCardProps) => {
         <div className="flex flex-col gap-6">
           <p className="text-base font-medium text-neutral-600">{excerpt}</p>
 
-          <Link
+          <Button
             href="#"
-            className="flex items-center gap-1.5 self-start rounded transition hover:bg-indigo-100 hover:text-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2"
-          >
-            <span className="text-base font-medium text-indigo-700">
-              Read More
-            </span>
-            <ArrowIcon width="13" height="12" className="text-indigo-700" />
-          </Link>
+            size="md"
+            variant="link"
+            text="Read More"
+            icon={ArrowIcon}
+            iconSize="sm"
+            iconPosition="right"
+            className="self-start"
+          />
         </div>
       </div>
     </article>
