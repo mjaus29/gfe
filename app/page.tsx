@@ -7,6 +7,7 @@ export default function Home() {
     { name: "Blog Card", href: "/blog-card" },
     { name: "Profile Card", href: "/profile-card" },
     { name: "Button", href: "/button" },
+    { name: "Input", href: "/input" },
     { name: "Hero", href: "/hero" },
   ];
 
