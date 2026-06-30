@@ -38,7 +38,7 @@ const InputPage = () => {
   return (
     <div className="container-layout bg-white">
       <div className="mt-28 flex h-full flex-col gap-8 md:gap-10 lg:gap-12">
-        <div className="flex flex-col items-center gap-12 md:gap-12">
+        <div className="flex flex-col items-center gap-12">
           {inputConfigs.map((config, index) => (
             <Input key={`${config.id}-${index}`} {...config} />
           ))}
