@@ -83,7 +83,7 @@ const Input = ({
         <span id={descriptionId} className={`${iconClass} text-sm font-normal`}>
           {hint}
         </span>
-      )}{" "}
+      )}
     </div>
   );
 };
