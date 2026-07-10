@@ -9,6 +9,7 @@ export default function Home() {
     { name: "Button", href: "/button" },
     { name: "Input", href: "/input" },
     { name: "Collections", href: "/collections" },
+    { name: "Badge", href: "/badge" },
     { name: "Hero", href: "/hero" },
   ];
 
