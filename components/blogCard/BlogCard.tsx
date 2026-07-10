@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Badge from "../badge/Badge";
 import Button from "../button/Button";
 import { ArrowIcon } from "../icons/Icons";
 type BlogCardProps = {
@@ -17,9 +18,13 @@ const BlogCard = ({ image, title, badge, excerpt }: BlogCardProps) => {
 
       <div className="flex flex-col gap-3 px-4 py-6">
         <div className="flex flex-col gap-2">
-          <span className="self-start rounded-full border border-green-200 bg-green-50 px-2 py-0.5 text-center text-sm font-normal text-green-700">
-            {badge}
-          </span>
+          <Badge
+            label={badge}
+            variant="success"
+            size="md"
+            className="self-start"
+          />
+
           <h3 className="text-lg font-semibold text-neutral-900">{title}</h3>
         </div>
 

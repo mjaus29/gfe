@@ -2,6 +2,7 @@ type BadgeProps = {
   variant: keyof typeof variants;
   size: keyof typeof sizes;
   label?: string;
+  className?: string;
 };
 
 const base = "flex items-center rounded-full border border-solid";
@@ -24,8 +25,8 @@ const variants = {
   brand: "bg-indigo-50 text-indigo-700 border-indigo-200",
 };
 
-const Badge = ({ variant, size, label }: BadgeProps) => {
-  const classes = `${base} ${variants[variant]} ${sizes[size]}`;
+const Badge = ({ variant, size, label, className }: BadgeProps) => {
+  const classes = `${base} ${variants[variant]} ${sizes[size]} ${className}`;
 
   return <span className={classes}>{label}</span>;
 };
