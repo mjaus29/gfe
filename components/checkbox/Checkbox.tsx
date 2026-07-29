@@ -30,7 +30,7 @@ const Checkbox = ({ state = "unchecked", label, className }: CheckboxProps) => {
         checked={state === "checked"}
         readOnly
         className={clsx(
-          "rounded accent-indigo-600",
+          "h-4 w-4 rounded accent-indigo-600",
           "focus-visible:ring-4 focus-visible:ring-indigo-200 focus-visible:ring-offset-0 focus-visible:outline-none",
         )}
       />
