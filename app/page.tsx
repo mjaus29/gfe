@@ -10,6 +10,7 @@ export default function Home() {
     { name: "Input", href: "/input" },
     { name: "Collections", href: "/collections" },
     { name: "Badge", href: "/badge" },
+    { name: "Checkbox", href: "/checkbox" },
     { name: "Hero", href: "/hero" },
   ];
 
