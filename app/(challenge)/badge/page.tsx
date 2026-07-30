@@ -12,7 +12,7 @@ const badgeSizes = ["sm", "md", "lg"] as const;
 
 const BadgePage = () => {
   return (
-    <div className="container-layout bg-layout">
+    <div className="container-layout bg-layout-plain">
       <div className="m-auto flex h-full flex-col gap-6">
         {badgeVariants.map((variant) => (
           <div key={variant} className="flex items-center gap-6">
