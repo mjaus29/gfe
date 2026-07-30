@@ -131,4 +131,8 @@
   .bg-layout {
     @apply flex min-h-screen min-w-screen justify-center bg-linear-to-b from-gray-50 to-[#d2d6db];
   }
+
+  .bg-layout-plain {
+    @apply flex min-h-screen min-w-screen justify-center;
+  }
 }

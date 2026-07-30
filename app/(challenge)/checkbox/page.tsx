@@ -8,7 +8,7 @@ const checkboxStates = [
 
 const CheckboxPage = () => {
   return (
-    <div className="container-layout bg-layout">
+    <div className="container-layout bg-layout-plain">
       <div className="m-auto flex h-full flex-col gap-6">
         {checkboxStates.map((item) => (
           <Checkbox
