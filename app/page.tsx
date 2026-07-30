@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export default function Home() {
   const challenges = [
-    { name: "Testimonial Card", href: "/testimonial-card" },
-    { name: "Blog Card", href: "/blog-card" },
-    { name: "Profile Card", href: "/profile-card" },
+    { name: "Testimonial Card", href: "/testimonial" },
+    { name: "Blog Card", href: "/blog" },
+    { name: "Profile Card", href: "/profile" },
     { name: "Button", href: "/button" },
     { name: "Input", href: "/input" },
     { name: "Collections", href: "/collections" },
