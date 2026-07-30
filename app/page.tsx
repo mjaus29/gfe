@@ -11,6 +11,7 @@ export default function Home() {
     { name: "Collections", href: "/collections" },
     { name: "Badge", href: "/badge" },
     { name: "Checkbox", href: "/checkbox" },
+    { name: "Dropdown", href: "/dropdown" },
     { name: "Hero", href: "/hero" },
   ];
 
