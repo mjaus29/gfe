@@ -1,6 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import { createPortal } from "react-dom";
+import { useEffect } from "react";
 import Button from "../button/Button";
 import { CloseIcon } from "../icons/Icons";
 
@@ -11,15 +10,6 @@ type ModalProps = {
 };
 
 const Modal = ({ title, message, onClose }: ModalProps) => {
-  const [mounted, setMounted] = useState(true);
-  const portalTarget = useRef<HTMLElement | null>(null);
-  if (!mounted) return null;
-
-  useEffect(() => {
-    setMounted(true);
-    portalTarget.current = document.body;
-  }, []);
-
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -34,7 +24,7 @@ const Modal = ({ title, message, onClose }: ModalProps) => {
     };
   }, [onClose]);
 
-  return createPortal(
+  return (
     <div className="bg-text-secondary fixed inset-0 z-50 flex items-center justify-center">
       <dialog
         className="flex w-85.75 flex-col gap-8 rounded-lg bg-white p-6 shadow-sm"
@@ -90,8 +80,7 @@ const Modal = ({ title, message, onClose }: ModalProps) => {
           />
         </div>
       </dialog>
-    </div>,
-    document.body,
+    </div>
   );
 };
 export default Modal;
