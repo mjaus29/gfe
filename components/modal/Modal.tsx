@@ -27,6 +27,7 @@ const Modal = ({ title, message, onClose }: ModalProps) => {
               icon={CloseIcon}
               className="ml-4 h-4 w-4"
               onClick={onClose}
+              aria-label="Close modal"
             />
           </div>
 
@@ -43,6 +44,7 @@ const Modal = ({ title, message, onClose }: ModalProps) => {
             text="No"
             className="w-full justify-center"
             onClick={onClose}
+            aria-label="No, I want to stay in the process"
           />
           <Button
             href="#"
@@ -51,6 +53,7 @@ const Modal = ({ title, message, onClose }: ModalProps) => {
             text="Yes"
             className="w-full justify-center"
             onClick={onClose}
+            aria-label="Yes, I want to leave the process"
           />
         </div>
       </article>
