@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Button from "../button/Button";
 import { CloseIcon } from "../icons/Icons";
@@ -10,14 +11,45 @@ type ModalProps = {
 };
 
 const Modal = ({ title, message, onClose }: ModalProps) => {
+  const [mounted, setMounted] = useState(true);
+  const portalTarget = useRef<HTMLElement | null>(null);
+  if (!mounted) return null;
+
+  useEffect(() => {
+    setMounted(true);
+    portalTarget.current = document.body;
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onClose]);
+
   return createPortal(
     <div className="bg-text-secondary fixed inset-0 z-50 flex items-center justify-center">
-      <article className="flex w-85.75 flex-col gap-8 rounded-lg bg-white p-6 shadow-sm">
+      <dialog
+        className="flex w-85.75 flex-col gap-8 rounded-lg bg-white p-6 shadow-sm"
+        style={{ margin: "auto" }}
+        aria-labelledby="modal-title"
+        aria-describedby="modal-description"
+      >
         <div className="flex flex-col items-center gap-2">
           <div className="flex gap-2">
-            <span className="text-lg font-semibold text-neutral-900">
+            <h2
+              id="modal-title"
+              className="text-lg font-semibold text-neutral-900"
+            >
               {title}
-            </span>
+            </h2>
 
             <Button
               size="sm"
@@ -31,9 +63,12 @@ const Modal = ({ title, message, onClose }: ModalProps) => {
             />
           </div>
 
-          <span className="text-sm font-normal text-neutral-600">
+          <p
+            id="modal-description"
+            className="text-sm font-normal text-neutral-600"
+          >
             {message}
-          </span>
+          </p>
         </div>
 
         <div className="flex gap-3">
@@ -54,7 +89,7 @@ const Modal = ({ title, message, onClose }: ModalProps) => {
             aria-label="Yes, I want to leave the process"
           />
         </div>
-      </article>
+      </dialog>
     </div>,
     document.body,
   );
