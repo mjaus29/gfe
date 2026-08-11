@@ -1,3 +1,4 @@
+"use client";
 import { createPortal } from "react-dom";
 import Button from "../button/Button";
 import { CloseIcon } from "../icons/Icons";
@@ -19,7 +20,6 @@ const Modal = ({ title, message, onClose }: ModalProps) => {
             </span>
 
             <Button
-              href="#"
               size="sm"
               variant="linkGray"
               iconOnly
@@ -38,7 +38,6 @@ const Modal = ({ title, message, onClose }: ModalProps) => {
 
         <div className="flex gap-3">
           <Button
-            href="#"
             size="md"
             variant="secondary"
             text="No"
@@ -47,7 +46,6 @@ const Modal = ({ title, message, onClose }: ModalProps) => {
             aria-label="No, I want to stay in the process"
           />
           <Button
-            href="#"
             size="md"
             variant="primary"
             text="Yes"
