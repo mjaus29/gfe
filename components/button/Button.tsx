@@ -13,10 +13,11 @@ type ButtonProps = {
   iconOnly?: boolean;
   iconPosition?: "left" | "right";
   text?: string;
+  onClick?: () => void;
 };
 
 const base =
-  "inline-flex items-center justify-center rounded font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2";
+  "inline-flex items-center justify-center rounded font-medium transition focus:outline-none focus-visible:ring-3";
 
 const sizes = {
   sm: "px-3.5 py-2.5 gap-1 text-sm",
@@ -36,17 +37,17 @@ const linkSizes = {
 
 const variants = {
   primary:
-    "bg-indigo-700 text-white shadow-sm hover:bg-indigo-800 focus-visible:ring-indigo-700",
+    "bg-indigo-700 text-white shadow-sm hover:bg-indigo-800 focus-visible:ring-indigo-100 focus-visible:bg-indigo-800",
 
   secondary:
-    "bg-white text-neutral-900 shadow-sm border border-neutral-200 hover:bg-neutral-200 focus-visible:ring-neutral-700",
+    "bg-white text-neutral-900 shadow-sm border border-neutral-200 hover:bg-neutral-50 focus-visible:ring-indigo-100 focus-visible:bg-neutral-50",
 
   tertiary: "text-indigo-700 hover:bg-indigo-100 focus-visible:ring-indigo-700",
 
-  link: "rounded-none p-0 text-indigo-700 focus-visible:ring-indigo-700 hover:bg-indigo-100",
+  link: "text-indigo-700 focus-visible:ring-indigo-100 hover:text-neutral-900 focus-visible:text-neutral-900",
 
   linkGray:
-    "rounded-none p-0 text-neutral-600 focus-visible:ring-neutral-500 hover:bg-neutral-300",
+    "text-neutral-600 focus-visible:ring-indigo-100 hover:text-neutral-900 focus-visible:text-neutral-900 focus-visible:ring-offset-5",
 
   danger:
     "bg-red-600 text-white shadow-sm hover:bg-red-700 focus-visible:ring-red-600",
@@ -62,6 +63,7 @@ const Button = ({
   iconOnly,
   iconPosition = "right",
   text = "Button CTA",
+  onClick,
 }: ButtonProps) => {
   const isLinkVariant = variant === "link" || variant === "linkGray";
   const sizeClass = isLinkVariant ? linkSizes[size] : sizes[size];
@@ -73,6 +75,7 @@ const Button = ({
       href={href}
       className={classes}
       aria-label={iconOnly ? text : undefined}
+      onClick={onClick}
     >
       {Icon && iconPosition === "left" && (
         <Icon className={iconClass} aria-hidden="true" />

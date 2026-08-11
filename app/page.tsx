@@ -12,6 +12,7 @@ export default function Home() {
     { name: "Badge", href: "/badge" },
     { name: "Checkbox", href: "/checkbox" },
     { name: "Dropdown", href: "/dropdown" },
+    { name: "Modal", href: "/modal" },
     { name: "Hero", href: "/hero" },
   ];
 
