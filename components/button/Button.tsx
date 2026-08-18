@@ -13,6 +13,7 @@ type ButtonProps = {
   iconOnly?: boolean;
   iconPosition?: "left" | "right";
   text?: string;
+  disabled?: boolean;
   onClick?: () => void;
 };
 
@@ -40,14 +41,14 @@ const variants = {
     "bg-indigo-700 text-white shadow-sm hover:bg-indigo-800 focus-visible:ring-indigo-100 focus-visible:bg-indigo-800",
 
   secondary:
-    "bg-white text-neutral-900 shadow-sm border border-neutral-200 hover:bg-neutral-50 focus-visible:ring-indigo-100 focus-visible:bg-neutral-50",
+    "bg-white text-neutral-900 shadow-sm border-neutral-200 hover:bg-neutral-50 focus-visible:ring-indigo-100 focus-visible:bg-neutral-50",
 
   tertiary: "text-indigo-700 hover:bg-indigo-100 focus-visible:ring-indigo-700",
 
   link: "text-indigo-700 focus-visible:ring-indigo-100 hover:text-neutral-900 focus-visible:text-neutral-900",
 
   linkGray:
-    "text-neutral-600 focus-visible:ring-indigo-100 hover:text-neutral-900 focus-visible:text-neutral-900 focus-visible:ring-offset-5",
+    "text-neutral-600 focus-visible:ring-indigo-100 hover:text-neutral-900 focus-visible:text-neutral-900 focus-visible:ring-offset-3",
 
   danger:
     "bg-red-600 text-white shadow-sm hover:bg-red-700 focus-visible:ring-red-600",
@@ -63,19 +64,31 @@ const Button = ({
   iconOnly,
   iconPosition = "right",
   text = "Button CTA",
+  disabled = false,
   onClick,
 }: ButtonProps) => {
   const isLinkVariant = variant === "link" || variant === "linkGray";
   const sizeClass = isLinkVariant ? linkSizes[size] : sizes[size];
   const iconClass = iconSize === "sm" ? "size-4 shrink-0" : "size-5 shrink-0";
-  const classes = `${base} ${sizeClass} ${variants[variant]} ${className}`;
+  const classes = `${base} ${sizeClass} ${variants[variant]} ${className} ${
+    disabled ? "pointer-events-none cursor-not-allowed opacity-50" : ""
+  }`;
 
   return (
     <Link
       href={href}
       className={classes}
       aria-label={iconOnly ? text : undefined}
-      onClick={onClick}
+      aria-disabled={disabled}
+      tabIndex={disabled ? -1 : undefined}
+      onClick={(event) => {
+        if (disabled) {
+          event.preventDefault();
+          return;
+        }
+
+        onClick?.();
+      }}
     >
       {Icon && iconPosition === "left" && (
         <Icon className={iconClass} aria-hidden="true" />

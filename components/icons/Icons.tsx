@@ -225,6 +225,41 @@ export const DownIcon = (props: SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
+export const RightIcon = (props: SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 7 11"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M4.12477 5.30332L0 1.17851L1.17851 0L6.48185 5.30332L1.17851 10.6066L0 9.42807L4.12477 5.30332Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};
+export const LeftIcon = (props: SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 7 11"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M2.35708 5.30332L6.48185 1.17851L5.30334 0L0 5.30332L5.30334 10.6066L6.48185 9.42807L2.35708 5.30332Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};
+
 export const CloseIcon = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg

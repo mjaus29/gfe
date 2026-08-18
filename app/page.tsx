@@ -13,6 +13,7 @@ export default function Home() {
     { name: "Checkbox", href: "/checkbox" },
     { name: "Dropdown", href: "/dropdown" },
     { name: "Modal", href: "/modal" },
+    { name: "Pagination", href: "/pagination" },
     { name: "Hero", href: "/hero" },
   ];
 
