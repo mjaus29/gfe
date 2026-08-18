@@ -14,6 +14,7 @@ type ButtonProps = {
   iconPosition?: "left" | "right";
   text?: string;
   disabled?: boolean;
+  ariaCurrent?: "page";
   onClick?: () => void;
 };
 
@@ -65,6 +66,7 @@ const Button = ({
   iconPosition = "right",
   text = "Button CTA",
   disabled = false,
+  ariaCurrent,
   onClick,
 }: ButtonProps) => {
   const isLinkVariant = variant === "link" || variant === "linkGray";
@@ -73,22 +75,26 @@ const Button = ({
   const classes = `${base} ${sizeClass} ${variants[variant]} ${className} ${
     disabled ? "pointer-events-none cursor-not-allowed opacity-50" : ""
   }`;
+  const handleClick = onClick
+    ? (event: React.MouseEvent<HTMLAnchorElement>) => {
+        if (disabled) {
+          event.preventDefault();
+          return;
+        }
+
+        onClick();
+      }
+    : undefined;
 
   return (
     <Link
       href={href}
       className={classes}
       aria-label={iconOnly ? text : undefined}
+      aria-current={ariaCurrent}
       aria-disabled={disabled}
       tabIndex={disabled ? -1 : undefined}
-      onClick={(event) => {
-        if (disabled) {
-          event.preventDefault();
-          return;
-        }
-
-        onClick?.();
-      }}
+      {...(handleClick ? { onClick: handleClick } : {})}
     >
       {Icon && iconPosition === "left" && (
         <Icon className={iconClass} aria-hidden="true" />
