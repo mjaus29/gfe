@@ -1,6 +1,6 @@
 "use client";
 
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 import { ComponentType, SVGProps, useState } from "react";
 import {
   CheckIcon,
@@ -45,7 +45,7 @@ export default function Dropdown({ options }: Readonly<{ options: Option[] }>) {
           </span>
         </div>
         <DownIcon
-          className={clsx(
+          className={cn(
             "h-[5.4015421867370605px] w-[8.838862419128418px] text-neutral-900 transition-transform duration-200",
             expanded && "rotate-180",
           )}
@@ -72,7 +72,7 @@ export default function Dropdown({ options }: Readonly<{ options: Option[] }>) {
                   role="menuitemradio"
                   aria-checked={isSelected}
                   aria-disabled={isDisabled}
-                  className={clsx(
+                  className={cn(
                     "flex items-center justify-between gap-2 rounded px-2 py-1.5 hover:bg-neutral-50",
                     isSelected && "bg-gray-50",
                     isDisabled && "cursor-not-allowed opacity-50",

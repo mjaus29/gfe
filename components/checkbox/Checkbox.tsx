@@ -1,6 +1,6 @@
 "use client";
 
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 import { useEffect, useId, useRef } from "react";
 
 type CheckboxState = "unchecked" | "checked" | "indeterminate";
@@ -22,14 +22,14 @@ const Checkbox = ({ state = "unchecked", label, className }: CheckboxProps) => {
   }, [state]);
 
   return (
-    <div className={clsx("flex items-center gap-3", className)}>
+    <div className={cn("flex items-center gap-3", className)}>
       <input
         ref={checkboxRef}
         id={id}
         type="checkbox"
         checked={state === "checked"}
         readOnly
-        className={clsx(
+        className={cn(
           "h-4 w-4 rounded accent-indigo-600",
           "focus-visible:ring-4 focus-visible:ring-indigo-200 focus-visible:ring-offset-0 focus-visible:outline-none",
         )}
