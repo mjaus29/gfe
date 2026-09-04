@@ -21,7 +21,7 @@ export default function Home() {
     <div className="flex flex-1 flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex w-full max-w-3xl flex-1 flex-col items-center justify-center gap-8 bg-white dark:bg-black">
         <Image
-          className="dark:invert"
+          className="h-25 w-25 dark:invert"
           src="/img/logo.svg"
           alt="GFE logo"
           width={100}

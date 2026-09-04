@@ -13,7 +13,14 @@ const BlogCard = ({ image, title, badge, excerpt }: BlogCardProps) => {
   return (
     <article className="h-full w-85 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
       <div className="relative h-72 w-full">
-        <Image src={image} alt={title} fill className="object-cover" priority />
+        <Image
+          src={image}
+          alt={title}
+          fill
+          sizes="340px"
+          className="object-cover"
+          priority
+        />
       </div>
 
       <div className="flex flex-col gap-3 px-4 py-6">

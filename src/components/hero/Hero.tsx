@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Button from "../button/Button";
+import Link from "next/link";
 import { GitHubIcon, InstagramIcon, LinkedInIcon, XIcon } from "../icons/Icons";
 
-type ProfileCardProps = {
+type HeroProps = {
   image: string;
   title: string;
   name: string;
@@ -10,13 +10,13 @@ type ProfileCardProps = {
 };
 
 const socials = [
-  { href: "#", name: "GitHub", icon: GitHubIcon },
-  { href: "#", name: "LinkedIn", icon: LinkedInIcon },
-  { href: "#", name: "Instagram", icon: InstagramIcon },
-  { href: "#", name: "X", icon: XIcon },
+  { icon: GitHubIcon, name: "GitHub" },
+  { icon: LinkedInIcon, name: "LinkedIn" },
+  { icon: InstagramIcon, name: "Instagram" },
+  { icon: XIcon, name: "X" },
 ];
 
-const ProfileCard = ({ image, title, name, bio }: ProfileCardProps) => {
+const Hero = ({ image, title, name, bio }: HeroProps) => {
   return (
     <article className="flex h-full w-85 flex-col gap-10 rounded-lg border border-gray-200 bg-white px-4 py-6 shadow-sm">
       <div className="flex flex-col items-center gap-6">
@@ -25,7 +25,7 @@ const ProfileCard = ({ image, title, name, bio }: ProfileCardProps) => {
           alt={name}
           width={64}
           height={64}
-          className="object-cover"
+          className="h-16 w-16 object-cover"
           priority
         />
 
@@ -44,30 +44,29 @@ const ProfileCard = ({ image, title, name, bio }: ProfileCardProps) => {
       </div>
 
       <div className="flex flex-col gap-6">
-        <Button
+        <Link
           href="#"
-          size="md"
-          variant="primary"
-          text="Contact me"
-          className="w-full justify-center"
-        />
+          className="flex items-center justify-center gap-1.5 rounded bg-indigo-700 px-4 py-2.5 transition hover:bg-indigo-500 hover:text-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2"
+        >
+          <span className="flex items-center justify-center px-0.5 text-base font-medium text-white">
+            Contact me
+          </span>
+        </Link>
 
         <div className="flex justify-center gap-4">
           {socials.map((social) => (
-            <Button
+            <Link
               key={social.name}
-              href={social.href}
-              size="2xl"
-              variant="tertiary"
-              icon={social.icon}
-              iconOnly
-              text={`Visit ${name}'s ${social.name} profile`}
-              className="p-2 hover:bg-indigo-100"
-            />
+              href="#"
+              className="flex items-center justify-center gap-2 rounded p-2 transition hover:bg-indigo-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-700 focus-visible:ring-offset-2"
+              aria-label={`Visit ${name}'s ${social.name} profile`}
+            >
+              <social.icon className="h-5 w-5" aria-hidden="true" />
+            </Link>
           ))}
         </div>
       </div>
     </article>
   );
 };
-export default ProfileCard;
+export default Hero;

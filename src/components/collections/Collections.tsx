@@ -30,6 +30,7 @@ const Collections = ({ collections }: CollectionsProps) => {
                 alt={collection.name}
                 className="object-cover"
                 fill
+                sizes="(min-width: 1440px) 594px, (min-width: 768px) 338px, 319px"
                 priority
               />
 
